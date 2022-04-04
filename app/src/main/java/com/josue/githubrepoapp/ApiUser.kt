@@ -38,10 +38,10 @@ class ApiUser : AppCompatActivity(){
 
 
     //start fun to get user data from API
-    private fun fetchUserData(userInput:String) {
+    private fun fetchUserData(userSearch:String) {
         //start okHttpClient
         val client = OkHttpClient()
-        val request = Request.Builder().url("https://api.github.com/users/$userInput").build()
+        val request = Request.Builder().url("https://api.github.com/users/$userSearch").build()
         client.newCall(request).enqueue(object: Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("error","Exception $e")
